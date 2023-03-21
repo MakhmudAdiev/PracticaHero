@@ -1,0 +1,29 @@
+[
+    {
+        "id": "01",
+        "name": "cat",
+        "hp": 30,
+        "damage": 50,
+        "armor": 1,
+        "superForceId": 1,
+        "level": 1
+    },
+    {
+        "id": 10,
+        "name": "dog",
+        "hp": 30,
+        "damage": 50,
+        "armor": 1,
+        "superForceId": 1,
+        "level": 1
+    },
+    {
+        "id": 11,
+        "name": "lion",
+        "hp": 30,
+        "damage": 50,
+        "armor": 1,
+        "superForceId": 1,
+        "level": 1
+    }
+]
