@@ -5,9 +5,12 @@
         "hp": 100,
         "damage": 50,
         "armor": 40,
-        "weapon": [
-            10,
-            11
+        "weaponId": [
+            "01",
+            10
+        ],
+        "animalId": [
+            "01"
         ]
     },
     {
@@ -16,7 +19,10 @@
         "hp": 80,
         "damage": 50,
         "armor": 21,
-        "weapon": [
+        "weaponId": [
+            10
+        ],
+        "animalId": [
             11
         ]
     },
@@ -26,8 +32,11 @@
         "hp": 80,
         "damage": 50,
         "armor": 21,
-        "weapon": [
+        "weaponId": [
             11
+        ],
+        "animalId": [
+            10
         ]
     }
 ]
