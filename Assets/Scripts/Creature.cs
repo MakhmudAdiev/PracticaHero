@@ -70,28 +70,9 @@ public class Hero : Ident
      
 }
 
-[Serializable]
-public class Weapon :Element, Ident
-{
-    public int id { get; set; }
-
-    protected override bool isSelected { get; set; }
-
-    public string name;
-    public int damage;
-    public int bodyPart;
  
-}
-
-[Serializable]
-public class Potion : Element,Ident
-{
-    public int id { get; set; }
-    
-    protected override bool isSelected { get; set; }
-
-    public int hpDelta;
-}
+ 
+ 
 
 [Serializable]
 public class Animal : Ident
