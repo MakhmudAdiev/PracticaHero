@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,23 +13,29 @@ public class Creature : MonoBehaviour
     public TextAsset JsonWeapon;
     public  List<Hero> Heroes;
 
-    public List<Element> _elements = new List <Element>();
+    public Dictionary<string, Element> _elements;
     private void Start()
     {
+ 
+
+        _elements = GameObject.FindObjectsOfType<Element>().ToDictionary(elem => elem.name, value => value); 
+
+        Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
+
         AddButtonListeners();
-       
-        //Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
 
     }
 
 
     public void AddButtonListeners()
     {
+
         foreach (var elem in _elements) //подписка  на событие клика кнопки
         {
-            var Button = elem.transform.GetComponent<Button>();
+           
+            var Button = elem.Value.transform.GetComponent<Button>();
 
-            Button.onClick.AddListener(elem.SelectItem);
+            Button.onClick.AddListener(elem.Value.SelectItem);
 
 
 

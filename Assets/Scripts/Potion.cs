@@ -11,7 +11,7 @@ public class Potion : Element, Ident
 {
     public int id { get; set; }
 
-    protected override bool isSelected { get; set; } = true;
+   
 
     public int hpDelta;
 }
