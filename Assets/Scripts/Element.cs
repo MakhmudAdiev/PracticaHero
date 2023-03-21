@@ -15,9 +15,25 @@ public  class Element : Creature
     public void SelectItem() //выделяем выбранный элемент на доске
     {
 
-        isSelected = true;
+       
+        if (_elements.Any((elem) => {  return elem.isSelected == true; }) == true) // если  одного выделенного элемента, тогда выделяем тот,который нажат
+        {
+
+            foreach (var elem in _elements)
+            {
+                elem.isSelected = false;
+            }
+
+
+            isSelected = true;
+
+        }
+ 
+
+      
 
         Debug.Log("Кнопка была нажата!");
+      
 
 
     }
