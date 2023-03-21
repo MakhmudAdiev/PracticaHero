@@ -8,15 +8,11 @@ public class Creature : MonoBehaviour
 {
     public TextAsset JsonHero;
     public TextAsset JsonWeapon;
+    public  List<Hero> Heroes;
 
     private void Start()
     {
-        List<Hero> Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
-        List<Weapon> Weapons = JsonConvert.DeserializeObject<List<Weapon>>(JsonWeapon.text);
-
-        Debug.Log(Heroes[0].weapon[0]);
-        Debug.Log(Heroes[0].weapon[1]);
-        Debug.Log(Weapons[0].name);
+        Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
     }
 }
 

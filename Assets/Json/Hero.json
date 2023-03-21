@@ -19,5 +19,15 @@
         "weapon": [
             11
         ]
+    },
+    {
+        "id": 2,
+        "name": "mag",
+        "hp": 80,
+        "damage": 50,
+        "armor": 21,
+        "weapon": [
+            11
+        ]
     }
 ]
