@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Creature : MonoBehaviour
 {
@@ -10,10 +12,34 @@ public class Creature : MonoBehaviour
     public TextAsset JsonWeapon;
     public  List<Hero> Heroes;
 
+    public List<Element> _elements = new List <Element>();
     private void Start()
     {
-        Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
+        AddButtonListeners();
+       
+        //Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
+
     }
+
+
+    public void AddButtonListeners()
+    {
+        foreach (var elem in _elements) //подписка  на событие клика кнопки
+        {
+            var Button = elem.transform.GetComponent<Button>();
+
+            Button.onClick.AddListener(elem.SelectItem);
+
+
+
+        }
+
+    }
+
+
+
+
+
 }
 
 public enum Body
@@ -41,22 +67,28 @@ public class Hero : Ident
     public int[] weapon;
     //public Potion[] potion;
     //public Animal[] animal;
+     
 }
 
 [Serializable]
-public class Weapon : Ident
+public class Weapon :Element, Ident
 {
     public int id { get; set; }
+
+    protected override bool isSelected { get; set; }
 
     public string name;
     public int damage;
     public int bodyPart;
+ 
 }
 
 [Serializable]
-public class Potion : Ident
+public class Potion : Element,Ident
 {
     public int id { get; set; }
+    
+    protected override bool isSelected { get; set; }
 
     public int hpDelta;
 }
@@ -82,3 +114,5 @@ public class superForce : Ident
     public string name;
     public string damage;
 }
+
+
