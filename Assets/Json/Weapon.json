@@ -1,0 +1,14 @@
+[
+    {
+        "id": 10,
+        "name": "axe",
+        "damage": 50,
+        "bodyPart": 1
+    },
+    {
+        "id": 11,
+        "name": "bow",
+        "damage": 50,
+        "bodyPart": 1
+    }
+]

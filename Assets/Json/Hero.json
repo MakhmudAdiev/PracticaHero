@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "name": "knight",
+        "hp": 100,
+        "damage": 50,
+        "armor": 40,
+        "weapon": [
+            10,
+            11
+        ]
+    },
+    {
+        "id": 1,
+        "name": "archer",
+        "hp": 80,
+        "damage": 50,
+        "armor": 21,
+        "weapon": [
+            11
+        ]
+    }
+]

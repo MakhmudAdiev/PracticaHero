@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{25C0B392-472A-67CA-F267-4A53AF5475B7}|">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creature.cs">
+    <Files>
+      <File FileName="Assets/Json/Hero.json" Line="12" Column="7" />
+      <File FileName="Assets/Json/Weapon.json" Line="3" Column="9" />
+      <File FileName="Assets/Scripts/Creature.cs" Line="17" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PracticaHero" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Json" expanded="True" />
+              <Node name="Scripts" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9160b300-0b41-49ca-b055-0af2942fd786" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
