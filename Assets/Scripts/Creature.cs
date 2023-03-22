@@ -23,14 +23,18 @@ public class Creature : MonoBehaviour
 
     public Dictionary<string, Element> _elements;
 
-    public CreateScriptableObject scrObj;
+    public Dictionary<string,GameObject> _elementsPrefabs;
 
+    public CreateScriptableObject scrObj;
+ 
     private void Start()
     {
         scrObj = FindObjectOfType<CreateScriptableObject>();
 
 
-        _elements = GameObject.FindObjectsOfType<Element>().ToDictionary(elem => elem.name, value => value); 
+        _elements = GameObject.FindObjectsOfType<Element>().ToDictionary(elem => elem.name, value => value);
+
+        _elementsPrefabs = Resources.LoadAll<GameObject>("Assets/Graphics/Elements").ToDictionary(pref=> pref.name,value => value);
 
         AddButtonListeners();
 
@@ -134,19 +138,12 @@ public class Creature : MonoBehaviour
     }
 }
 
-public enum Body
-{
-    head,
-    torso,
-    leftHand,
-    rightHand,
-    leftFoot,
-    rightFoot
-}
+ 
 
 [Serializable]
-public class Hero : Ident
+public class Hero : Creature, Ident
 {
+
     public int id { get; set; }
 
     public string name;
@@ -154,7 +151,8 @@ public class Hero : Ident
     public int damage;
     public int armor;
 
-    //public Body body;
+
+
     [HideInInspector] public int[] weaponId;
     [HideInInspector] public int[] animalId;
     [HideInInspector] public int[] potionId;
@@ -162,6 +160,34 @@ public class Hero : Ident
     public List<WeaponI> weapon = new List<WeaponI>();
     public List<PotionI> potion = new List<PotionI>();
     public List<Animal> animal = new List<Animal>();
+
+    public Dictionary< string,GameObject> Skelet;
+
+
+    public Hero() {
+
+ 
+
+        Skelet = GameObject.FindGameObjectsWithTag("Body").ToDictionary((key) => key.name, (value) => value);
+    
+    
+    }
+
+
+
+    public void GetArmor(Transform PositionBone, Element SelectedElem = null)
+    {
+
+        Debug.Log("Взял предмет"+SelectedElem.name +" в "+PositionBone.transform);
+
+        Instantiate(_elementsPrefabs[SelectedElem.name], PositionBone.position, Quaternion.identity);
+
+
+
+
+
+    }
+
 }
 
 [Serializable]
@@ -172,6 +198,9 @@ public class WeaponI : Ident
     public string name;
     public int damage;
     public int bodyPart;
+
+  
+
 }
 
 [Serializable]
