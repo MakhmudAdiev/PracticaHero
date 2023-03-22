@@ -9,6 +9,7 @@ public  class Element : Creature
 
 
     private bool _isSelected = false;
+ 
 
     public bool isSelected { 
         
@@ -24,7 +25,7 @@ public  class Element : Creature
 
 
                 _isSelected = true;
-                transform.localPosition = Vector3.one * 2;
+                transform.localScale = Vector3.one * 2;
 
 
             }
@@ -34,7 +35,7 @@ public  class Element : Creature
             {
 
                 _isSelected = false;
-                transform.localPosition = Vector3.one;
+                transform.localScale = Vector3.one;
             
             
             
@@ -58,9 +59,6 @@ public  class Element : Creature
 
     public void SelectItem() //выделяем выбранный элемент на доске
     {
- 
-
-      
             foreach (var elem in _elements)
             {
                 elem.Value.isSelected = false;
@@ -69,16 +67,9 @@ public  class Element : Creature
 
 
             isSelected = true;
-
-  
-
-
+    }
 
  
-      
-
-
-    }
 
 
 }
