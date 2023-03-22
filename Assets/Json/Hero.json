@@ -6,11 +6,14 @@
         "damage": 50,
         "armor": 40,
         "weaponId": [
-            "01",
-            10
+            10,
+            11
         ],
         "animalId": [
-            "01"
+            100
+        ],
+        "potionId": [
+            10
         ]
     },
     {
@@ -20,9 +23,13 @@
         "damage": 50,
         "armor": 21,
         "weaponId": [
-            10
+            11
         ],
         "animalId": [
+            10
+        ],
+        "potionId": [
+            10,
             11
         ]
     },
@@ -33,10 +40,15 @@
         "damage": 50,
         "armor": 21,
         "weaponId": [
-            11
+            100
         ],
         "animalId": [
-            10
+            11
+        ],
+        "potionId": [
+            10,
+            11,
+            100
         ]
     }
 ]

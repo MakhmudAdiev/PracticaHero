@@ -1,29 +1,35 @@
 [
     {
-        "id": "01",
-        "name": "cat",
-        "hp": 30,
-        "damage": 50,
-        "armor": 1,
-        "superForceId": 1,
-        "level": 1
-    },
-    {
         "id": 10,
-        "name": "dog",
+        "name": "Electric eagle",
         "hp": 30,
         "damage": 50,
         "armor": 1,
-        "superForceId": 1,
-        "level": 1
+        "level": 1,
+        "forceId": [
+            11
+        ]
     },
     {
         "id": 11,
-        "name": "lion",
+        "name": "Ice wolf",
         "hp": 30,
         "damage": 50,
         "armor": 1,
-        "superForceId": 1,
-        "level": 1
+        "level": 1,
+        "forceId": [
+            100
+        ]
+    },
+    {
+        "id": 100,
+        "name": "Fire lion",
+        "hp": 30,
+        "damage": 50,
+        "armor": 1,
+        "level": 1,
+        "forceId": [
+            10
+        ]
     }
 ]

@@ -1,0 +1,17 @@
+[
+    {
+        "id": 10,
+        "name": "FireBall",
+        "damage": 50
+    },
+    {
+        "id": 11,
+        "name": "Electric claws",
+        "damage": 50
+    },
+    {
+        "id": 100,
+        "name": "Eillars of ice",
+        "damage": 50
+    }
+]

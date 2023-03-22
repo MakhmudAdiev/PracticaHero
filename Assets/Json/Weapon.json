@@ -1,18 +1,18 @@
 [
     {
-        "id": "01",
+        "id": 10,
         "name": "axe",
         "damage": 50,
         "bodyPart": 1
     },
     {
-        "id": 10,
+        "id": 11,
         "name": "bow",
         "damage": 50,
         "bodyPart": 1
     },
     {
-        "id": 11,
+        "id": 100,
         "name": "scepter",
         "damage": 50,
         "bodyPart": 1

@@ -13,63 +13,37 @@ public class Creature : MonoBehaviour
     public TextAsset JsonWeapon;
     public TextAsset JsonAnimal;
     public TextAsset JsonPotion;
+    public TextAsset JsonForce;
 
     public List<Hero> Heroes;
+    private List<WeaponI> Weapons;
+    private List<Animal> Animals;
+    private List<PotionI> Potions;
+    private List<superForce> Forces;
 
     public Dictionary<string, Element> _elements;
 
+    public CreateScriptableObject scrObj;
+
     private void Start()
     {
- 
+        scrObj = FindObjectOfType<CreateScriptableObject>();
+
 
         _elements = GameObject.FindObjectsOfType<Element>().ToDictionary(elem => elem.name, value => value); 
 
-        Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
-
         AddButtonListeners();
- 
 
-        //Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
         Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
-        List<WeaponI> Weapons = JsonConvert.DeserializeObject<List<WeaponI>>(JsonWeapon.text);
-        List<Animal> Animals = JsonConvert.DeserializeObject<List<Animal>>(JsonAnimal.text);
-        List<PotionI> Potions = JsonConvert.DeserializeObject<List<PotionI>>(JsonPotion.text);
+        Weapons = JsonConvert.DeserializeObject<List<WeaponI>>(JsonWeapon.text);
+        Animals = JsonConvert.DeserializeObject<List<Animal>>(JsonAnimal.text);
+        Potions = JsonConvert.DeserializeObject<List<PotionI>>(JsonPotion.text);
+        Forces = JsonConvert.DeserializeObject<List<superForce>>(JsonForce.text);
 
-        int size = 0;
-        for (int i = 0; i < Heroes.Count; i++)
-        {
-            for (int j = 0; j < Weapons.Count; j++)
-            {
-                if (Weapons[j].id == Heroes[i].weaponId[size])
-                {
-                    Heroes[i].weapon.Add(Weapons[j]);
-
-                    size++;
-
-                    if (size >= Heroes[i].weaponId.Length)
-                        size = 0;
-                }
-            }
-        }
-
-        for (int i = 0; i < Heroes.Count; i++)
-        {
-            for (int j = 0; j < Animals.Count; j++)
-            {
-                if (Animals[j].id == Heroes[i].animalId[size])
-                {
-                    Heroes[i].animal.Add(Animals[j]);
-
-                    size++;
-
-                    if (size >= Heroes[i].animalId.Length)
-                        size = 0;
-                }
-            }
-        }
+        AddInfo();
+        scrObj.hero = Heroes;
 
     }
-
 
     public void AddButtonListeners()
     {
@@ -77,21 +51,87 @@ public class Creature : MonoBehaviour
         foreach (var elem in _elements) //��������  �� ������� ����� ������
  
         {
-           
             var Button = elem.Value.transform.GetComponent<Button>();
 
             Button.onClick.AddListener(elem.Value.SelectItem);
-
-
-
         }
 
     }
 
+    public void AddInfo() 
+    {
+        //добавление информации о оружии
+        int sizeWeapon = 0;
+        for (int i = 0; i < Heroes.Count; i++)
+        {
+            for (int j = 0; j < Weapons.Count; j++)
+            {
+                if (Weapons[j].id == Heroes[i].weaponId[sizeWeapon])
+                {
+                    Heroes[i].weapon.Add(Weapons[j]);
 
+                    sizeWeapon++;
 
+                    if (sizeWeapon >= Heroes[i].weaponId.Length)
+                        sizeWeapon = 0;
+                }
+            }
+        }
 
+        //добавление информации о животных
+        int sizeAnimal = 0;
+        for (int i = 0; i < Heroes.Count; i++)
+        {
+            for (int j = 0; j < Animals.Count; j++)
+            {
+                if (Animals[j].id == Heroes[i].animalId[sizeAnimal])
+                {
+                    Heroes[i].animal.Add(Animals[j]);
 
+                    sizeAnimal++;
+
+                    if (sizeAnimal >= Heroes[i].animalId.Length)
+                        sizeAnimal = 0;
+                }
+            }
+        }
+
+        //добавление информации о зельях
+        int sizePotion = 0;
+        for (int i = 0; i < Heroes.Count; i++)
+        {
+            for (int j = 0; j < Potions.Count; j++)
+            {
+                if (Potions[j].id == Heroes[i].potionId[sizePotion])
+                {
+                    Heroes[i].potion.Add(Potions[j]);
+
+                    sizePotion++;
+
+                    if (sizePotion >= Heroes[i].potionId.Length)
+                        sizePotion = 0;
+                }
+            }
+        }
+
+        //добавление информации о способностях
+        int sizeForce = 0;
+        for (int i = 0; i < Animals.Count; i++)
+        {
+            for (int j = 0; j < Forces.Count; j++)
+            {
+                if (Forces[j].id == Animals[i].forceId[sizeForce])
+                {
+                    Animals[i].force.Add(Forces[j]);
+
+                    sizeForce++;
+
+                    if (sizeForce >= Animals[i].forceId.Length)
+                        sizeForce = 0;
+                }
+            }
+        }
+    }
 }
 
 public enum Body
@@ -117,10 +157,10 @@ public class Hero : Ident
     //public Body body;
     [HideInInspector] public int[] weaponId;
     [HideInInspector] public int[] animalId;
-    //[HideInInspector] public int[] animald;
+    [HideInInspector] public int[] potionId;
 
     public List<WeaponI> weapon = new List<WeaponI>();
-    //public Potion[] potion;
+    public List<PotionI> potion = new List<PotionI>();
     public List<Animal> animal = new List<Animal>();
 }
 
@@ -139,7 +179,9 @@ public class PotionI : Ident
 {
     public int id { get; set; }
 
-    public int hpDelta;
+    public string name;
+    public string performanceIncrease; 
+    public int value;
 }
 
 [Serializable]
@@ -151,17 +193,20 @@ public class Animal : Ident
     public int hp;
     public int damage;
     public int armor;
-    public superForce[] force;
-
     public int level;
+
+    [HideInInspector] public int[] forceId;
+    public List<superForce> force = new List<superForce>();
+
 }
 
 [Serializable]
 public class superForce : Ident
 {
     public int id { get; set; }
+
     public string name;
-    public string damage;
+    public int damage;
 }
 
 

@@ -1,14 +1,20 @@
 ﻿[
     {
         "id": 10,
-        "name": "axe"
+        "name": "Healing potion",
+        "performanceIncrease": "health",
+        "value": 5
     },
     {
         "id": 11,
-        "name": "bow"       
+        "name": "Protective potion",
+        "performanceIncrease": "armor",
+        "value": 5
     },
     {
         "id": 100,
-        "name": "scepter"        
+        "name": "Power potion",
+        "performanceIncrease": "damage",
+        "value" : 5
     }
 ]
