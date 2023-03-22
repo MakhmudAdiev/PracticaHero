@@ -1,16 +1,20 @@
 ﻿<Properties StartupConfiguration="{25C0B392-472A-67CA-F267-4A53AF5475B7}|">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9f244b60-0d42-4c4e-bf24-e0d8d2e7363e" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Creature.cs">
     <Files>
-      <File FileName="Assets/Json/Hero.json" Line="13" Column="16" />
-      <File FileName="Assets/Json/Weapon.json" Line="15" Column="18" />
-      <File FileName="Assets/Json/Animal.json" Line="11" Column="10" />
-      <File FileName="Assets/Scripts/Creature.cs" Line="44" Column="30" />
-      <File FileName="Assets/Scripts/CreateScriptableObject.cs" Line="9" Column="2" />
-      <File FileName="Assets/Json/Potion.json" Line="15" Column="18" />
-      <File FileName="Assets/Json/SuperForce.json" Line="14" Column="19" />
+      <File FileName="Assets/Json/Hero.json" />
+      <File FileName="Assets/Json/Weapon.json" />
+      <File FileName="Assets/Json/Animal.json" />
+      <File FileName="Assets/Scripts/Creature.cs" Line="55" Column="1" />
+      <File FileName="Assets/Scripts/CreateScriptableObject.cs" />
+      <File FileName="Assets/Json/Potion.json" />
+      <File FileName="Assets/Json/SuperForce.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,8 +29,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7d604947-713c-42cd-990e-afc8ad94b03a" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

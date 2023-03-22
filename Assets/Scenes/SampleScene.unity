@@ -342,8 +342,10 @@ MonoBehaviour:
   JsonWeapon: {fileID: 0}
   JsonAnimal: {fileID: 0}
   JsonPotion: {fileID: 0}
+  JsonForce: {fileID: 0}
   Heroes: []
-  _elements: []
+  scrObj: {fileID: 0}
+  isSelected: 0
 --- !u!1 &445960026
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,8 +694,10 @@ MonoBehaviour:
   JsonWeapon: {fileID: 0}
   JsonAnimal: {fileID: 0}
   JsonPotion: {fileID: 0}
+  JsonForce: {fileID: 0}
   Heroes: []
-  _elements: []
+  scrObj: {fileID: 0}
+  isSelected: 0
 --- !u!1 &1483924150
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,11 +867,9 @@ MonoBehaviour:
   JsonWeapon: {fileID: 4900000, guid: 7d1e7312092de430abed0cd42f47a4f5, type: 3}
   JsonAnimal: {fileID: 4900000, guid: eda01439b50c6472cac061b3dd28ac31, type: 3}
   JsonPotion: {fileID: 4900000, guid: 15292ba228411442385c63927ae97063, type: 3}
+  JsonForce: {fileID: 4900000, guid: b555ed49b18b54df9a63c99a0d9ad808, type: 3}
   Heroes: []
-  _elements:
-  - {fileID: 277043784}
-  - {fileID: 2105482162}
-  - {fileID: 1413404910}
+  scrObj: {fileID: 0}
 --- !u!1 &1845718873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,5 +1169,7 @@ MonoBehaviour:
   JsonWeapon: {fileID: 0}
   JsonAnimal: {fileID: 0}
   JsonPotion: {fileID: 0}
+  JsonForce: {fileID: 0}
   Heroes: []
-  _elements: []
+  scrObj: {fileID: 0}
+  isSelected: 0
