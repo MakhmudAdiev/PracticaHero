@@ -8,7 +8,50 @@ public  class Element : Creature
 
 
 
-    public bool isSelected = false;
+    private bool _isSelected = false;
+
+    public bool isSelected { 
+        
+        
+        get { return _isSelected; }
+        
+        
+        set {
+
+
+            if (value == true)
+            {
+
+
+                _isSelected = true;
+                transform.localPosition = Vector3.one * 2;
+
+
+            }
+
+
+            else
+            {
+
+                _isSelected = false;
+                transform.localPosition = Vector3.one;
+            
+            
+            
+            
+            
+            }
+        
+        }
+    
+    
+    
+    }
+
+
+
+
+
 
     
 
@@ -21,21 +64,17 @@ public  class Element : Creature
             foreach (var elem in _elements)
             {
                 elem.Value.isSelected = false;
-
-                elem.Value.transform.localScale = Vector3.one;
-
-                Debug.Log("Уменьшение");
+         
             }
 
 
             isSelected = true;
 
-            transform.localScale = Vector3.one * 2;
+  
 
 
 
-
-        Debug.Log("Кнопка была нажата!  Статус :"+isSelected+" "+_elements.Count());
+ 
       
 
 
