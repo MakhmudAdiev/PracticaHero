@@ -25,14 +25,16 @@ public class Creature : MonoBehaviour
 
     public Dictionary<string,GameObject> _elementsPrefabs;
 
+
+
     private void Start()
     {
         _elements = GameObject.FindObjectsOfType<Element>().ToDictionary(elem => elem.name, value => value);
 
-        _elementsPrefabs = Resources.LoadAll<GameObject>("Assets/Graphics/Elements").ToDictionary(pref=> pref.name,value => value);
+ 
 
         AddButtonListeners();
-
+      
         Heroes = JsonConvert.DeserializeObject<List<Hero>>(JsonHero.text);
         Weapons = JsonConvert.DeserializeObject<List<WeaponI>>(JsonWeapon.text);
         Animals = JsonConvert.DeserializeObject<List<Animal>>(JsonAnimal.text);
@@ -44,16 +46,26 @@ public class Creature : MonoBehaviour
 
     public void AddButtonListeners()
     {
- 
-        foreach (var elem in _elements) //��������  �� ������� ����� ������
- 
-        {
-            //var Button = elem.Value.transform.GetComponent<Button>();
 
-            //Button.onClick.AddListener(elem.Value.SelectItem);
+        foreach (var elem in _elements) //��������  �� ������� ����� ������
+
+        {
+            var Button = elem.Value.transform.GetComponent<Button>();
+
+            Button.onClick.AddListener(elem.Value.SelectItem);
         }
 
     }
+
+    public void CreateThings(GameObject PositionBone,GameObject elemPref)
+    {
+
+        Instantiate(elemPref, PositionBone.transform.position + new Vector3(0,0,-1), Quaternion.identity);
+
+
+    }
+
+ 
 
     public void AddInfo() 
     {
@@ -134,17 +146,19 @@ public class Creature : MonoBehaviour
  
 
 [Serializable]
-public class Hero : Creature, Ident
+public class Hero :Ident
 {
 
     public int id { get; set; }
-
+ 
     public string name;
     public int hp;
     public int damage;
     public int armor;
 
+    [NonReorderable] public int MaxCountElements = 0;
 
+    [NonSerialized] public short CountWearedElem = 0;
 
     [HideInInspector] public int[] weaponId;
     [HideInInspector] public int[] animalId;
@@ -154,32 +168,76 @@ public class Hero : Creature, Ident
     public List<PotionI> potion = new List<PotionI>();
     public List<Animal> animal = new List<Animal>();
 
+
     public Dictionary< string,GameObject> Skelet;
 
+    public Hero()
+    {
 
-    public Hero() {
+        Skelet = GameObject.FindGameObjectsWithTag("Body").ToDictionary((key) => key.name, (value) => value);
+
+        
+
+    }
+
+
+
+    public void GetArmor(GameObject PositionBone, Element SelectedElem = null, Creature Main = null)
+    {
+
+
+
 
  
 
-        Skelet = GameObject.FindGameObjectsWithTag("Body").ToDictionary((key) => key.name, (value) => value);
-    
-    
+        var _elementsPrefabs = Resources.LoadAll<GameObject>("Graphics/Elements").ToDictionary(pref => pref.name, value => value);
+
+
+
+        if (!((PositionBone.name.StartsWith("Foot")) && ((SelectedElem.name == "Potion")))) // для ног
+        {
+            Debug.Log("Нельзя на ногу одеть что то кроме зелья!");
+
+        }
+
+
+
+
+        else if(CountWearedElem<MaxCountElements)
+        {
+
+            Main.CreateThings(PositionBone, _elementsPrefabs[SelectedElem.name]);
+           
+
+
+        }
+
+
+
+        if (PositionBone.name.StartsWith("Head"))
+        {
+            Debug.Log("На лицо нельзя ничего надевать!");
+
+        }
+
+
+        else if (PositionBone.name.StartsWith("Arm") && CountWearedElem < MaxCountElements)
+        {
+
+
+
+            Main.CreateThings(PositionBone, _elementsPrefabs[SelectedElem.name]);
+        
+
+
+        }
+
+
+
+
     }
 
-
-
-    public void GetArmor(Transform PositionBone, Element SelectedElem = null)
-    {
-
-        Debug.Log("Взял предмет"+SelectedElem.name +" в "+PositionBone.transform);
-
-        Instantiate(_elementsPrefabs[SelectedElem.name], PositionBone.position, Quaternion.identity);
-
-
-
-
-
-    }
+    
 
 }
 

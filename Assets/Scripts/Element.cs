@@ -26,6 +26,8 @@ public  class Element : Creature
 
                 _isSelected = true;
                 transform.localScale = Vector3.one * 2;
+                
+           
 
 
             }
@@ -36,8 +38,8 @@ public  class Element : Creature
 
                 _isSelected = false;
                 transform.localScale = Vector3.one;
-            
-            
+
+
             
             
             
