@@ -10,5 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c49fb02952b514a1e93aa8ed43338843, type: 3}
-  m_Name: Creature
+  m_Name: Weapon
   m_EditorClassIdentifier: 
+  JsonWeapon: {fileID: 4900000, guid: 7d1e7312092de430abed0cd42f47a4f5, type: 3}
+  weapon:
+  - name: axe
+    damage: 50
+    bodyPart: 1
+  - name: bow
+    damage: 50
+    bodyPart: 1
+  - name: scepter
+    damage: 50
+    bodyPart: 1

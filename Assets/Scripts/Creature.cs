@@ -25,13 +25,8 @@ public class Creature : MonoBehaviour
 
     public Dictionary<string,GameObject> _elementsPrefabs;
 
-    public CreateScriptableObject scrObj;
- 
     private void Start()
     {
-        scrObj = FindObjectOfType<CreateScriptableObject>();
-
-
         _elements = GameObject.FindObjectsOfType<Element>().ToDictionary(elem => elem.name, value => value);
 
         _elementsPrefabs = Resources.LoadAll<GameObject>("Assets/Graphics/Elements").ToDictionary(pref=> pref.name,value => value);
@@ -45,8 +40,6 @@ public class Creature : MonoBehaviour
         Forces = JsonConvert.DeserializeObject<List<superForce>>(JsonForce.text);
 
         AddInfo();
-        scrObj.hero = Heroes;
-
     }
 
     public void AddButtonListeners()
@@ -55,9 +48,9 @@ public class Creature : MonoBehaviour
         foreach (var elem in _elements) //��������  �� ������� ����� ������
  
         {
-            var Button = elem.Value.transform.GetComponent<Button>();
+            //var Button = elem.Value.transform.GetComponent<Button>();
 
-            Button.onClick.AddListener(elem.Value.SelectItem);
+            //Button.onClick.AddListener(elem.Value.SelectItem);
         }
 
     }
