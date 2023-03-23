@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraChoice.cs" />
+    <Compile Include="Assets\Scripts\DestroyerPrefabs.cs" />
     <Compile Include="Assets\Scripts\Potion.cs" />
     <Compile Include="Assets\Scripts\CreateScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Element.cs" />

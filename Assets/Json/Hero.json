@@ -12,43 +12,46 @@
         "animalId": [
             100
         ],
-        "potionId": [
-            10
-        ]
+      "potionId": [
+        10
+      ],
+      "MaxCountElements": 4
     },
-    {
-        "id": 1,
-        "name": "archer",
-        "hp": 80,
-        "damage": 50,
-        "armor": 21,
-        "weaponId": [
-            11
-        ],
-        "animalId": [
-            10
-        ],
-        "potionId": [
-            10,
-            11
-        ]
-    },
-    {
-        "id": 2,
-        "name": "mag",
-        "hp": 80,
-        "damage": 50,
-        "armor": 21,
-        "weaponId": [
-            100
-        ],
-        "animalId": [
-            11
-        ],
-        "potionId": [
-            10,
-            11,
-            100
-        ]
-    }
+  {
+    "id": 1,
+    "name": "archer",
+    "hp": 80,
+    "damage": 50,
+    "armor": 21,
+    "weaponId": [
+      11
+    ],
+    "animalId": [
+      10
+    ],
+    "potionId": [
+      10,
+      11
+    ],
+    "MaxCountElements": 4
+  },
+  {
+    "id": 2,
+    "name": "mag",
+    "hp": 80,
+    "damage": 50,
+    "armor": 21,
+    "weaponId": [
+      100
+    ],
+    "animalId": [
+      11
+    ],
+    "potionId": [
+      10,
+      11,
+      100
+    ],
+    "MaxCountElements": 4
+  }
 ]

@@ -66,7 +66,6 @@ public  class Element : Creature
                 elem.Value.isSelected = false;
          
             }
-            Debug.Log(_elements.Count);
 
 
             isSelected = true;
