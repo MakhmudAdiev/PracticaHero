@@ -228,9 +228,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 0.54707587
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.2264621, z: 0}
 --- !u!1 &129875758
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +452,6 @@ MonoBehaviour:
   JsonPotion: {fileID: 0}
   JsonForce: {fileID: 0}
   Heroes: []
-  scrObj: {fileID: 0}
 --- !u!1 &445960026
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +575,6 @@ MonoBehaviour:
   JsonPotion: {fileID: 0}
   JsonForce: {fileID: 0}
   Heroes: []
-  scrObj: {fileID: 0}
   hero: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
@@ -689,7 +687,6 @@ MonoBehaviour:
   JsonPotion: {fileID: 0}
   JsonForce: {fileID: 0}
   Heroes: []
-  scrObj: {fileID: 0}
   hero: {fileID: 1573711771}
 --- !u!1 &543697752
 GameObject:
@@ -796,9 +793,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5000001
-  m_Height: 1.0000001
+  m_Height: 0.5470759
   m_Direction: 1
-  m_Center: {x: 0, y: -0.000000059604645, z: 0}
+  m_Center: {x: -0.000000013578756, y: -0.22646175, z: 0}
 --- !u!1 &804193880
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,9 +901,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 0.54707587
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.22646207, z: 0}
 --- !u!1 &1413404905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1045,6 @@ MonoBehaviour:
   JsonPotion: {fileID: 0}
   JsonForce: {fileID: 0}
   Heroes: []
-  scrObj: {fileID: 0}
 --- !u!1 &1483924150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,7 +1222,6 @@ MonoBehaviour:
   JsonPotion: {fileID: 4900000, guid: 15292ba228411442385c63927ae97063, type: 3}
   JsonForce: {fileID: 4900000, guid: b555ed49b18b54df9a63c99a0d9ad808, type: 3}
   Heroes: []
-  scrObj: {fileID: 0}
 --- !u!136 &1573711772
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1368,7 +1363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797035124}
   - component: {fileID: 1797035125}
-  - component: {fileID: 6166443567051280476}
+  - component: {fileID: 1797035126}
   m_Layer: 0
   m_Name: LeftArm
   m_TagString: Body
@@ -1443,6 +1438,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!136 &1797035126
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797035123}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.50000006
+  m_Height: 0.5470759
+  m_Direction: 1
+  m_Center: {x: -0.0000009964989, y: -0.22646224, z: 0}
 --- !u!1 &1845718873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,49 +1762,3 @@ MonoBehaviour:
   JsonPotion: {fileID: 0}
   JsonForce: {fileID: 0}
   Heroes: []
-  scrObj: {fileID: 0}
---- !u!61 &6166443567051280476
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797035123}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0

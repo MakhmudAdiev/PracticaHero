@@ -26,6 +26,8 @@ public  class Element : Creature
 
                 _isSelected = true;
                 transform.localScale = Vector3.one * 2;
+                
+           
 
 
             }
@@ -36,8 +38,8 @@ public  class Element : Creature
 
                 _isSelected = false;
                 transform.localScale = Vector3.one;
-            
-            
+
+
             
             
             
@@ -64,6 +66,7 @@ public  class Element : Creature
                 elem.Value.isSelected = false;
          
             }
+            Debug.Log(_elements.Count);
 
 
             isSelected = true;

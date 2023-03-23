@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class CameraChoice : Element
+public class CameraChoice : Creature
 {
 
 
@@ -33,7 +33,7 @@ public class CameraChoice : Element
         if (Input.GetMouseButtonDown(0) && result)
         {
 
-          Element elem =  hero._elements.First(predicate: (elem) => { return elem.Value.isSelected == true; }).ConvertTo<Element>();
+          Element elem =  hero._elements.FirstOrDefault(predicate: (elem) => { return elem.Value.isSelected == true; }).Value;
 
           hero.Heroes[0].GetArmor(hitInfo.transform,SelectedElem:elem);
             

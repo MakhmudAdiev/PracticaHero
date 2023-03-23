@@ -29,7 +29,7 @@ public class Creature : MonoBehaviour
     {
         _elements = GameObject.FindObjectsOfType<Element>().ToDictionary(elem => elem.name, value => value);
 
-        _elementsPrefabs = Resources.LoadAll<GameObject>("Assets/Graphics/Elements").ToDictionary(pref=> pref.name,value => value);
+ 
 
         AddButtonListeners();
 
@@ -44,13 +44,13 @@ public class Creature : MonoBehaviour
 
     public void AddButtonListeners()
     {
- 
-        foreach (var elem in _elements) //��������  �� ������� ����� ������
- 
-        {
-            //var Button = elem.Value.transform.GetComponent<Button>();
 
-            //Button.onClick.AddListener(elem.Value.SelectItem);
+        foreach (var elem in _elements) //��������  �� ������� ����� ������
+
+        {
+            var Button = elem.Value.transform.GetComponent<Button>();
+
+            Button.onClick.AddListener(elem.Value.SelectItem);
         }
 
     }
@@ -134,7 +134,7 @@ public class Creature : MonoBehaviour
  
 
 [Serializable]
-public class Hero : Creature, Ident
+public class Hero : Creature,Ident
 {
 
     public int id { get; set; }
@@ -171,7 +171,11 @@ public class Hero : Creature, Ident
     public void GetArmor(Transform PositionBone, Element SelectedElem = null)
     {
 
-        Debug.Log("Взял предмет"+SelectedElem.name +" в "+PositionBone.transform);
+        Debug.Log("Взял предмет"+SelectedElem.name +" в "+PositionBone.transform.position);
+
+        _elementsPrefabs = Resources.LoadAll<GameObject>("Graphics/Elements").ToDictionary(pref => pref.name, value => value);
+
+        Debug.Log(_elementsPrefabs.Count());
 
         Instantiate(_elementsPrefabs[SelectedElem.name], PositionBone.position, Quaternion.identity);
 
